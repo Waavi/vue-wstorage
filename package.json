@@ -28,7 +28,7 @@
         "validate": "yarn lint && yarn stylelint && yarn test",
         "prepublishOnly": "yarn run validate && yarn run build && rm dist/demo.html"
     },
-    "main": "src/index.js",
+    "main": "index.js",
     "unpkg": "dist/vue-wstorage.umd.min.js",
     "jsDelivr": "dist/vue-wstorage.umd.min.js",
     "files": [

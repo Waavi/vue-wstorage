@@ -10,7 +10,7 @@ export default {
    */
     install: (Vue, options = {}) => {
         if (typeof process !== 'undefined' && (process.server || process.SERVER_BUILD || (process.env && process.env.VUE_ENV === 'server'))) return
-        debugger
+
         const { name, key } = options
         const props = {
             name: name || 'localStorage',
