@@ -1,0 +1,29 @@
+language: node_js
+
+node_js:
+  - 10
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+env:
+  - NODE_ENV=test
+
+script:
+    - yarn validate
+
+after_script:
+    - cat ./coverage/lcov.info | coveralls
+
+notifications:
+  email:
+    recipients:
+      - jaime@waavi.com
+      - alejandro@waavi.com
+      - adrian@waavi.com
+      - carlos@waavi.com
+      - carlos.lara@waavi.com
+    on_success: change
+    on_failure: always
