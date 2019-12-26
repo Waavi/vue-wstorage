@@ -14,11 +14,11 @@ LocalStorage plugin.
 
 ## Usage
   ``` js
-  import VueLocalStorage from 'vue-wstorage'
+  import VueWStorage from 'vue-wstorage'
 
-  Vue.use(VueLocalStorage)
+  Vue.use(VueWStorage)
   // Or you can specify any other name and use it via this.$ls, this.$whatEverYouWant
-  Vue.use(VueLocalStorage, {
+  Vue.use(VueWStorage, {
     name: 'ls',
     key: 'app:0.0.1',
   })
