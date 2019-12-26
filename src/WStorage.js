@@ -49,7 +49,7 @@ export default class WStorage {
         const data = this.lsGet()
 
         if (data[key]) return data[key]
-        return defaultValue !== null ? defaultValue : null
+        return defaultValue !== null ? defaultValue : this.lsGet()
     }
 
     /**
@@ -78,8 +78,17 @@ export default class WStorage {
             return null
         }
 
-        const data = this.lsGet()
-        delete data[key]
-        return window.localStorage.setItem(this.key, data)
+        return this.set(key)
+    }
+
+    /**
+    * Clean localStorage
+    */
+    clean () {
+        if (!this.isSupported) {
+            return null
+        }
+
+        return window.localStorage.setItem(this.key, '')
     }
 }

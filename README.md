@@ -1,6 +1,15 @@
-# Vue WStorage
+<br>
+<br>
+<br>
+<p align="center">
+    <img src="https://waavi.com/img/waavi_logo.4213ffb7.png" alt="WStorage by WAAVI" width="200"/>
+    <br>
+Vue WStorage
+</p>
 
-LocalStorage plugin.
+## Introduction
+
+**Vue WStorage** is a library to manage localStorage of your browser.
 
 ## Install
 
@@ -9,7 +18,7 @@ LocalStorage plugin.
   ```
   or
   ``` bash
-  bower install vue-wstorage
+  yarn add vue-wstorage
   ```
 
 ## Usage
@@ -24,21 +33,26 @@ LocalStorage plugin.
   })
 
   // Use localStorage from Vue object
-  Vue.localStorage.set('someNumber', 123)
-  Vue.localStorage.get('someNumber')
+  Vue.storage.set('user', { name: 'Foo', surname: 'Demo' })
+  Vue.storage.get('user')
 
+  // Get all values
+  Vue.storage.get()
   // Fallback value if nothing found in localStorage
-  Vue.localStorage.get('propertyThatNotExists', 'fallbackValue') // Will return 'fallbackValue' string
+  Vue.storage.get('propertyThatNotExists', 'fallbackValue') // Will return 'fallbackValue' string
 
+  // Remove value
+  Vue.storage.remove('user')
+  // Remove all values
+  Vue.storage.clean('user')
 
-  //register localStorage variables and adds computed variables to local components
-  //to be used like regular computeds that are stored in the localstorage
+  // Component use
   var vm = new Vue({
     methods: {
       someMethod () {
-        let lsValue = this.$localStorage.get('someObject')
-        this.$localStorage.set('someBoolean', true)
-        this.$localStorage.remove('stringOne')
+        let lsValue = this.$storage.get('someObject')
+        this.$storage.set('someBoolean', true)
+        this.$storage.remove('stringOne')
       }
     }
   })

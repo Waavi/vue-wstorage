@@ -3,17 +3,17 @@ import { WStorage } from './src'
 
 export default {
     /**
-   * Install vue-local-storage plugin
-   *
-   * @param {Vue} Vue
-   * @param {Object} options
-   */
+     * Install vue-wstorage plugin
+     *
+     * @param {Vue} Vue
+     * @param {Object} options
+     */
     install: (Vue, options = {}) => {
         if (typeof process !== 'undefined' && (process.server || process.SERVER_BUILD || (process.env && process.env.VUE_ENV === 'server'))) return
 
         const { name, key } = options
         const props = {
-            name: name || 'localStorage',
+            name: name || 'storage',
             key: key || 'WStorage',
             isSupported: true,
         }
