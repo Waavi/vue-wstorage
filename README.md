@@ -21,7 +21,7 @@ Vue WStorage
   yarn add vue-wstorage
   ```
 
-## Usage
+## Install
   ``` js
   import VueWStorage from 'vue-wstorage'
 
@@ -31,8 +31,11 @@ Vue WStorage
     name: 'ls',
     key: 'app:0.0.1',
   })
+  ```
 
-  // Use localStorage from Vue object
+## Usage
+  ``` js
+  // Use localStorage from object
   Vue.storage.set('user', { name: 'Foo', surname: 'Demo' })
   Vue.storage.get('user')
 
@@ -58,4 +61,4 @@ Vue WStorage
   })
   ```
 ## License
-  [MIT]
+  MIT Licensed | Copyright © 2019-present Waavi Studio S.L.
