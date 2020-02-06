@@ -11,10 +11,11 @@ export default {
     install: (Vue, options = {}) => {
         if (typeof process !== 'undefined' && (process.server || process.SERVER_BUILD || (process.env && process.env.VUE_ENV === 'server'))) return
 
-        const { name, key } = options
+        const { name, key, storage } = options
         const props = {
             name: name || 'storage',
             key: key || 'WStorage',
+            storage: storage || 'local',
             isSupported: true,
         }
 
@@ -31,4 +32,10 @@ export default {
         Vue[props.name] = new WStorage(props)
         Vue.prototype[`$${props.name}`] = new WStorage(props)
     },
+    /**
+     * Create vue-wstorage instance
+     *
+     * @param {Object} props
+     */
+    initialize: props => new WStorage(props),
 }

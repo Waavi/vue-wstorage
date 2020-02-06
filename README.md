@@ -30,6 +30,7 @@ Vue WStorage
   Vue.use(VueWStorage, {
     name: 'ls',
     key: 'app:0.0.1',
+    storage: 'local', // Select session|local storage
   })
   ```
 
