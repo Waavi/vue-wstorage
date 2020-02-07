@@ -1,10 +1,17 @@
+
+[![npm version](https://img.shields.io/npm/v/vue-wstorage.svg?style=popout-square)](https://www.npmjs.com/package/vue-wstorage)
+[![npm downloads](https://img.shields.io/npm/dm/vue-wstorage.svg?style=popout-square)](https://www.npmjs.com/package/vue-wstorage)
+[![GitHub stars](https://img.shields.io/github/stars/waavi/vue-wstorage.svg?style=popout-square)](https://github.com/waavi/vue-wstorage)
+![Travis](https://travis-ci.com/Waavi/vue-wstorage.svg?token=Q9Sz1pTvqBgPz1SyHLk1&branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Waavi/vue-wstorage/badge.svg?branch=master)](https://coveralls.io/github/Waavi/vue-wstorage?branch=master)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=popout-square)](https://github.com/waavi/vue-wstorage/raw/master/license.txt)
+
 <br>
 <br>
 <br>
 <p align="center">
-    <img src="https://waavi.com/img/waavi_logo.4213ffb7.png" alt="WStorage by WAAVI" width="200"/>
-    <br>
-Vue WStorage
+  <img src="https://waavi.com/img/waavi_logo.4213ffb7.png" alt="WStorage by WAAVI" width="200"/>
+<br>
 </p>
 
 ## Introduction

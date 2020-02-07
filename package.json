@@ -2,7 +2,7 @@
     "author": "WAAVI",
     "name": "vue-wstorage",
     "version": "1.0.0",
-    "description": "Vuejs local/sesion storage",
+    "description": "Vue.js plugin to manage localStorage and sessionStorage",
     "license": "MIT",
     "homepage": "https://waavi.com",
     "repository": {
