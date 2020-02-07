@@ -52,7 +52,7 @@ Vue WStorage
   // Remove value
   Vue.storage.remove('user')
   // Remove all values
-  Vue.storage.clean('user')
+  Vue.storage.clean()
   ```
 
   - Local instance
