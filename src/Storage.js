@@ -1,4 +1,8 @@
-import { STORAGES } from './utils'
+const STORAGES = {
+    local: 'localStorage',
+    session: 'sessionStorage',
+    default: 'localStorage',
+}
 
 export default class Storage {
     /**
