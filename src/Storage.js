@@ -8,8 +8,8 @@ export default class Storage {
         name, key, storage, isSupported,
     } = {}) {
         this.key = key
-        this.isSupported = isSupported
         this.storage = storage
+        this.isSupported = isSupported
 
         this.store = this.storageInstance()
     }
@@ -26,29 +26,34 @@ export default class Storage {
     }
 
     /**
-    * Private method to set a value in store giving respect to the key.
+    * Private method set a new value of store.
     *
     * @param {string} keye
     * @param {*} value
     * @private
     */
-    lsSet (key, value) {
-        const data = JSON.stringify({
-            ...this.lsGet(),
-            [key]: value,
-        })
-
-        this.store.setItem(this.key, data)
+    lsSet (data) {
+        this.store.setItem(this.key, JSON.stringify(data))
     }
 
     /**
-    * Private method to get a value in store giving respect to the key.
+    * Private method to get store.
     *
     * @returns {any}
     * @private
     */
     lsGet () {
         return JSON.parse(this.store[this.key] || '{}')
+    }
+
+    /**
+    * Private method to clean store.
+    *
+    * @returns {any}
+    * @private
+    */
+    lsClean () {
+        return this.lsSet('')
     }
 
     /**
@@ -81,7 +86,11 @@ export default class Storage {
             return null
         }
 
-        this.lsSet(key, value)
+        this.lsSet({
+            ...this.lsGet(),
+            [key]: value,
+        })
+
         return value
     }
 
@@ -102,6 +111,7 @@ export default class Storage {
 
     /**
     * Clean store
+    *
     * @returns {*}
     * @public
     */
@@ -110,6 +120,6 @@ export default class Storage {
             return null
         }
 
-        return this.store.setItem(this.key, '')
+        return this.lsClean()
     }
 }

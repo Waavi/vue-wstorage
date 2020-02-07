@@ -1,14 +1,11 @@
 import Storage from './Storage'
 
 export default class WStorage extends Storage {
-    /**
-    * WStorage constructor
-    */
     constructor (props) {
         super(props)
 
-        this.local = new Storage({ ...props, storage: 'local' })
-        this.session = new Storage({ ...props, storage: 'session' })
+        this.localStore = new Storage({ ...props, storage: 'local' })
+        this.sessionStore = new Storage({ ...props, storage: 'session' })
     }
 
     /**
@@ -17,15 +14,15 @@ export default class WStorage extends Storage {
     * @public
     */
     local () {
-        return this.session
+        return this.localStore
     }
 
     /**
-    * Local store
+    * Session store
     * @returns {*}
     * @public
     */
     session () {
-        return this.local
+        return this.sessionStore
     }
 }

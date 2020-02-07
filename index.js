@@ -14,19 +14,18 @@ export default {
         const { name, key, storage } = options
         const props = {
             name: name || 'storage',
-            key: key || 'WStorage',
+            key: key || 'wstorage',
             storage: storage || 'local',
             isSupported: true,
         }
 
         try {
-            const test = 'vue-localstorage-test'
-
+            const test = 'vue-wstorage-test'
             window.localStorage.setItem(test, test)
             window.localStorage.removeItem(test)
         } catch (e) {
             props.isSupported = false
-            console.error('Local storage is not supported')
+            console.error('Local or Session storage is not supported')
         }
 
         Vue[props.name] = new WStorage(props)
