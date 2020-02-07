@@ -58,35 +58,35 @@ describe('WStorage session', () => {
 describe('WStorage is not supported', () => {
     const $storage = WStorage.initialize({
         isSupported: false,
-    });
+    })
 
-    beforeEach($storage.session.clean);
+    beforeEach($storage.session.clean)
 
     it('Should be set and get value returned null', () => {
-        $storage.session.set('user', user);
-        expect($storage.session.get('user')).toEqual(null);
-    });
+        $storage.session.set('user', user)
+        expect($storage.session.get('user')).toEqual(null)
+    })
 
     it('Should be remove value returned null', () => {
-        $storage.session.set('user', user);
-        expect($storage.session.get('user')).toEqual(null);
-        $storage.session.remove('user');
-        expect($storage.session.get('user')).toEqual(null);
-    });
+        $storage.session.set('user', user)
+        expect($storage.session.get('user')).toEqual(null)
+        $storage.session.remove('user')
+        expect($storage.session.get('user')).toEqual(null)
+    })
 
     it('Should be clean all value returned null', () => {
-        $storage.session.set('user', user);
-        expect($storage.session.get('user')).toEqual(null);
-        $storage.session.clean();
-        expect($storage.session.get('user')).toEqual(null);
-    });
-});
+        $storage.session.set('user', user)
+        expect($storage.session.get('user')).toEqual(null)
+        $storage.session.clean()
+        expect($storage.session.get('user')).toEqual(null)
+    })
+})
 
 describe('WStorage install', () => {
-    let VueMock = () => {}
-    const $storage = WStorage.install(VueMock);
+    const VueMock = () => {}
+    WStorage.install(VueMock)
 
     it('Should be install library in Vue instance', () => {
-        expect(VueMock.prototype.$storage).toBeTruthy();
-    });
-});
+        expect(VueMock.prototype.$storage).toBeTruthy()
+    })
+})

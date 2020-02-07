@@ -1,9 +1,9 @@
 module.exports = {
     root: true,
     env: {
-        node: true,
+        node: true
     },
-    extends: ['plugin:vue/recommended', 'plugin:vue/strongly-recommended', '@vue/airbnb', '@vue/standard', 'plugin:vue-types/strongly-recommended'],
+    extends: ['plugin:vue-libs/recommended'],
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -11,16 +11,18 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'import/prefer-default-export': 'off',
         'vue/attribute-hyphenation': [
-            2, 'never', {
-                ignore: ['stroke-width', 'font-size', 'text-anchor', 'stroke-dasharray', 'stop-color', 'stop-opacity', 'foreignObject'],
-            },
+            2,
+            'never',
+            {
+                ignore: ['stroke-width', 'font-size', 'text-anchor', 'stroke-dasharray', 'stop-color', 'stop-opacity', 'foreignObject']
+            }
         ],
         'vue/html-closing-bracket-newline': [
             'error',
             {
                 singleline: 'never',
-                multiline: 'always',
-            },
+                multiline: 'always'
+            }
         ],
         'vue/html-indent': [
             'error',
@@ -29,8 +31,8 @@ module.exports = {
                 attribute: 1,
                 closeBracket: 0,
                 alignAttributesVertically: true,
-                ignores: [],
-            },
+                ignores: []
+            }
         ],
         'object-curly-spacing': ['error', 'always'],
         semi: ['error', 'never'],
@@ -38,8 +40,8 @@ module.exports = {
             'error',
             {
                 comments: 180,
-                code: 180,
-            },
+                code: 180
+            }
         ],
         indent: [
             'error',
@@ -47,15 +49,15 @@ module.exports = {
             {
                 SwitchCase: 1,
                 VariableDeclarator: 1,
-                outerIIFEBody: 1,
-            },
+                outerIIFEBody: 1
+            }
         ],
         'comma-dangle': ['error', 'always-multiline'],
         'vue/html-closing-bracket-spacing': 'error',
-        'vue/prop-name-casing': 'error',
+        'vue/prop-name-casing': 'error'
     },
     parserOptions: {
-        parser: 'babel-eslint',
+        parser: 'babel-eslint'
     },
     overrides: [
         {
@@ -63,11 +65,11 @@ module.exports = {
             rules: {
                 'import/no-extraneous-dependencies': 'off',
                 'no-console': 'off',
-                'no-debugger': 'off',
+                'no-debugger': 'off'
             },
             env: {
-                jest: true,
-            },
-        },
-    ],
-}
+                jest: true
+            }
+        }
+    ]
+};
