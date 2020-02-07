@@ -69,8 +69,8 @@ export default class Storage {
             return null
         }
 
-        const data = this.lsGet()
-        return data[key] !== undefined ? data[key] : defaultValue
+        const value = this.lsGet()[key]
+        return value !== undefined ? value : defaultValue
     }
 
     /**
