@@ -53,7 +53,7 @@ export default class Storage {
     * @private
     */
     lsClean () {
-        return this.lsSet('')
+        this.lsSet('')
     }
 
     /**
