@@ -9,7 +9,7 @@ Vue WStorage
 
 ## Introduction
 
-**Vue WStorage** is a library to manage localStorage of your browser.
+**Vue WStorage** is a library to manage localStorage and sessionStorage of your browser.
 
 ## Install
 
@@ -22,6 +22,7 @@ Vue WStorage
   ```
 
 ## Install
+
   ``` js
   import VueWStorage from 'vue-wstorage'
 
@@ -30,11 +31,15 @@ Vue WStorage
   Vue.use(VueWStorage, {
     name: 'ls',
     key: 'app:0.0.1',
+    storage: 'local', // Select session|local storage. By default it's 'local'
   })
   ```
 
 ## Usage
-  ``` js
+
+  - Global instance
+
+  ```js
   // Use localStorage from object
   Vue.storage.set('user', { name: 'Foo', surname: 'Demo' })
   Vue.storage.get('user')
@@ -47,15 +52,31 @@ Vue WStorage
   // Remove value
   Vue.storage.remove('user')
   // Remove all values
-  Vue.storage.clean('user')
+  Vue.storage.clean()
+  ```
 
-  // Component use
+  - Local instance
+
+  ```js
+  import VueWStorage from 'vue-wstorage'
+
+  const storage = VueWStorage.initalize()
+  storage.set('user', { name: 'Foo'})
+  storage.get('user')
+
+  storage.local.set('todos', [])
+  storage.session.set('step', 1)
+  ```
+
+  - Component
+
+  ``` js
   var vm = new Vue({
     methods: {
-      someMethod () {
-        let lsValue = this.$storage.get('someObject')
-        this.$storage.set('someBoolean', true)
-        this.$storage.remove('stringOne')
+      handleUser () {
+        this.$storage.set('loading', true)
+        this.$storage.get('user')
+        this.$storage.remove('loading')
       }
     }
   })
